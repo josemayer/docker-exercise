@@ -1,0 +1,8 @@
+=== PARTE 1 - Construindo a imagem do docker ===
+/* Após a criação do Dockerfile, rodamos o comando para criar a imagem,
+ * seguido da execução dessa imagem. Os resultados podem ser vistos em
+ * 0.0.0.0:2000:
+ */
+
+$ docker image build -t caddy-server:2.5.0 .
+$ docker run -p 2000:80 -d caddy-server-:2.5.0
