@@ -6,3 +6,12 @@
 
 $ docker image build -t caddy-server:2.5.0 .
 $ docker run -p 2000:80 -d caddy-server-:2.5.0
+
+=== PARTE 2 - Link de páginas locais com as do container ===
+/* Executando a imagem com uma flag -v que indica os arquivos locais
+ * e do container, podemos verificar que as mudanças feitas localmente são
+ * acompanhadas (a página em 0.0.0.0:2000 é atualizada assim que salvamos
+ * o arquivo)
+ */
+
+$ docker run -p 2000:80 -v $PWD/pages:/usr/src/pages -d caddy-server:2.5.0
